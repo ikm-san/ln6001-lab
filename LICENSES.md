@@ -7,7 +7,7 @@ or broaden those component licenses.
 The OpenWrt build was produced from local source commit:
 
 ```text
-31591d21d8dd650e8522ab268f83e0482b876fab
+68a8a32e9e753608b4f6539fd54ac3ff4b1c2349
 ```
 
 That commit belongs to the project's OpenWrt fork. LN6001 support and related

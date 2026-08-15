@@ -23,22 +23,20 @@ OpenWrt 本家への統合を目指します。
 | アーキテクチャ | ARMv8 / AArch64 |
 | ターゲット | `qualcommbe/ipq95xx` |
 | OpenWrt | `SNAPSHOT r0-a536ab1502` |
-| LuCI | `0.260809.48143` |
+| LuCI | `0.260815.07377` |
 | Linux カーネル | `6.18.41` |
-| ビルド元コミット | `31591d21d8dd650e8522ab268f83e0482b876fab` |
-
-![LN6001 OpenWrt システム情報](docs/images/ln6001-openwrt-system.png)
+| ビルド元コミット | `68a8a32e9e753608b4f6539fd54ac3ff4b1c2349` |
 
 ### ファームウェアイメージ
 
-- ファイル：[`firmware/LN6001_OpenWrt_31591d2_LAB.img`](firmware/LN6001_OpenWrt_31591d2_LAB.img)
-- サイズ：`32,931,296` bytes
-- SHA-256：`d4ac1c94b79952bbe8b49a55dd7e0bb8ed1394bea3dcdb0c4fb4216d3e5800fe`
+- ファイル：[`firmware/LN6001_OpenWrt_68a8a32_LAB.img`](firmware/LN6001_OpenWrt_68a8a32_LAB.img)
+- サイズ：`44,185,056` bytes
+- SHA-256：`5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76`
 
 インストール前に、ダウンロードしたファイルのハッシュを確認してください。
 
 ```text
-d4ac1c94b79952bbe8b49a55dd7e0bb8ed1394bea3dcdb0c4fb4216d3e5800fe  LN6001_OpenWrt_31591d2_LAB.img
+5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76  LN6001_OpenWrt_68a8a32_LAB.img
 ```
 
 このイメージは Linksys 互換のアップグレードラッパーを使用します。書き込み対象は
@@ -63,13 +61,14 @@ d4ac1c94b79952bbe8b49a55dd7e0bb8ed1394bea3dcdb0c4fb4216d3e5800fe  LN6001_OpenWrt
 
 1. Linksys 純正 Web インターフェースへログインします。
 2. 手動ファームウェア更新画面を開きます。
-3. `LN6001_OpenWrt_31591d2_LAB.img` を選択します。
+3. `LN6001_OpenWrt_68a8a32_LAB.img` を選択します。
 4. **設定を保持する／設定を引き継ぐ** に相当するオプションを無効にします。
 5. 更新を開始し、電源を入れたまま待ちます。アップロード、書き込み、初回起動には
    数分かかる場合があります。
 6. 再起動完了後に Ethernet を接続し直し、PC の DHCP リースを更新します。
 7. [http://192.168.1.1/](http://192.168.1.1/) を開いて LuCI へアクセスします。
-8. 直ちに root パスワードを設定します。
+8. CPE 底面のラベルに記載されたパスフレーズを使って root としてログインし、
+   直ちに root パスワードを変更します。
 
 無線デバイスと無線インターフェースは初期状態で無効です。**ネットワーク → 無線**
 で国コード、チャンネル、帯域幅、送信出力を確認してから有効にしてください。
@@ -147,22 +146,20 @@ submit them upstream, and migrate onto the resulting upstream implementation.
 | Architecture | ARMv8 / AArch64 |
 | Target | `qualcommbe/ipq95xx` |
 | OpenWrt | `SNAPSHOT r0-a536ab1502` |
-| LuCI | `0.260809.48143` |
+| LuCI | `0.260815.07377` |
 | Linux kernel | `6.18.41` |
-| Source commit used for this build | `31591d21d8dd650e8522ab268f83e0482b876fab` |
-
-![LN6001 OpenWrt system information](docs/images/ln6001-openwrt-system.png)
+| Source commit used for this build | `68a8a32e9e753608b4f6539fd54ac3ff4b1c2349` |
 
 ### Firmware image
 
-- File: [`firmware/LN6001_OpenWrt_31591d2_LAB.img`](firmware/LN6001_OpenWrt_31591d2_LAB.img)
-- Size: `32,931,296` bytes
-- SHA-256: `d4ac1c94b79952bbe8b49a55dd7e0bb8ed1394bea3dcdb0c4fb4216d3e5800fe`
+- File: [`firmware/LN6001_OpenWrt_68a8a32_LAB.img`](firmware/LN6001_OpenWrt_68a8a32_LAB.img)
+- Size: `44,185,056` bytes
+- SHA-256: `5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76`
 
 Verify the downloaded image before installing it:
 
 ```text
-d4ac1c94b79952bbe8b49a55dd7e0bb8ed1394bea3dcdb0c4fb4216d3e5800fe  LN6001_OpenWrt_31591d2_LAB.img
+5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76  LN6001_OpenWrt_68a8a32_LAB.img
 ```
 
 The image uses the Linksys-compatible upgrade wrapper. Its write payload is
@@ -189,7 +186,7 @@ environment, or `flash.scr` payload.
 
 1. Sign in to the official Linksys stock web interface.
 2. Open its manual firmware-update page.
-3. Select `LN6001_OpenWrt_31591d2_LAB.img`.
+3. Select `LN6001_OpenWrt_68a8a32_LAB.img`.
 4. Disable **Keep settings**, **Retain configuration**, or the equivalent
    option.
 5. Start the update and leave the router powered on. Uploading, writing, and
@@ -197,7 +194,8 @@ environment, or `flash.scr` payload.
 6. Reconnect by Ethernet after the router finishes rebooting and renew the
    computer's DHCP lease.
 7. Open [http://192.168.1.1/](http://192.168.1.1/) to reach LuCI.
-8. Set a root password immediately.
+8. Sign in as root using the passphrase printed on the CPE's bottom label, then
+   change the root password immediately.
 
 The wireless radios and interfaces are disabled by default. Review the country
 code, channel, channel width, and transmit-power settings before enabling them
