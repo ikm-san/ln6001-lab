@@ -22,21 +22,21 @@ OpenWrt 本家への統合を目指します。
 | LuCI のモデル表示 | Linksys LN6001 / MBE70WRT |
 | アーキテクチャ | ARMv8 / AArch64 |
 | ターゲット | `qualcommbe/ipq95xx` |
-| OpenWrt | `SNAPSHOT r0-a536ab1502` |
-| LuCI | `0.260815.07377` |
-| Linux カーネル | `6.18.41` |
-| ビルド元コミット | `68a8a32e9e753608b4f6539fd54ac3ff4b1c2349` |
+| OpenWrt | `SNAPSHOT r0-4387a153c4` |
+| LuCI | `0.260709.71895` |
+| Linux カーネル | `6.18.44` |
+| ビルド元コミット | `ba5ad01a16679ed00a517c2c4da8490eab2c834a` |
 
 ### ファームウェアイメージ
 
-- ファイル：[`firmware/LN6001_OpenWrt_68a8a32_LAB.img`](firmware/LN6001_OpenWrt_68a8a32_LAB.img)
-- サイズ：`44,185,056` bytes
-- SHA-256：`5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76`
+- ファイル：[`firmware/FW_LN6001_v25.12.26090921_release.img`](firmware/FW_LN6001_v25.12.26090921_release.img)
+- サイズ：`47,529,952` bytes
+- SHA-256：`0d4074e2e07b4b22db920f7ede1e36c0abbc698ac7c0ab9c086fbfb1f27e6ffd`
 
 インストール前に、ダウンロードしたファイルのハッシュを確認してください。
 
 ```text
-5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76  LN6001_OpenWrt_68a8a32_LAB.img
+0d4074e2e07b4b22db920f7ede1e36c0abbc698ac7c0ab9c086fbfb1f27e6ffd  FW_LN6001_v25.12.26090921_release.img
 ```
 
 このイメージは Linksys 互換のアップグレードラッパーを使用します。書き込み対象は
@@ -48,7 +48,8 @@ OpenWrt 本家への統合を目指します。
 
 1. ルーターが **LN6001 / MBE70WRT** であることを確認します。外観が似ているだけの
    別の Velop 製品には使用しないでください。
-2. Linksys 純正ファームウェアを起動します。動作確認済みの更新元は純正 v1.2 です。
+2. Linksys 純正ファームウェアを起動します。想定している更新元は純正 v1.2 ですが、
+   このビルドでは実機への書き込みとロールバックをまだ検証していません。
 3. もう一方のファームウェアスロットに、起動可能な純正イメージが残っていることを
    確認します。
 4. PC を Ethernet でルーターに接続し、更新中は不要な上流側ケーブルを外します。
@@ -61,7 +62,7 @@ OpenWrt 本家への統合を目指します。
 
 1. Linksys 純正 Web インターフェースへログインします。
 2. 手動ファームウェア更新画面を開きます。
-3. `LN6001_OpenWrt_68a8a32_LAB.img` を選択します。
+3. `FW_LN6001_v25.12.26090921_release.img` を選択します。
 4. **設定を保持する／設定を引き継ぐ** に相当するオプションを無効にします。
 5. 更新を開始し、電源を入れたまま待ちます。アップロード、書き込み、初回起動には
    数分かかる場合があります。
@@ -74,7 +75,8 @@ OpenWrt 本家への統合を目指します。
 で国コード、チャンネル、帯域幅、送信出力を確認してから有効にしてください。
 
 > [!WARNING]
-> この `.img` は、動作確認済みの純正 Web 更新手順で使用してください。
+> この `.img` は、ここに記載した純正 Web 更新手順でのみ使用してください。このビルドは
+> オフラインのイメージ検証に合格していますが、実機での書き込みとロールバックは未検証です。
 > raw `mtd` 書き込み、パーティション操作ツール、強制 `sysupgrade` は使用しないで
 > ください。デュアルスロットの保護を迂回し、復旧不能になる可能性があります。
 
@@ -106,7 +108,7 @@ LED のタイミングは状態によって異なる場合があります。純�
 ### SNAPSHOT の制限
 
 - OpenWrt SNAPSHOT のパッケージリポジトリは継続的に更新されます。将来の
-  パッケージインデックスには、Linux `6.18.41` と一致するカーネルモジュールが
+  パッケージインデックスには、Linux `6.18.44` と一致するカーネルモジュールが
   残っていない場合があります。
 - このイメージにはラボ向けパッケージとフォーク固有の変更が含まれます。
   OpenWrt 本家への提出を想定した最小構成イメージではありません。
@@ -145,21 +147,21 @@ submit them upstream, and migrate onto the resulting upstream implementation.
 | Model reported by LuCI | Linksys LN6001 / MBE70WRT |
 | Architecture | ARMv8 / AArch64 |
 | Target | `qualcommbe/ipq95xx` |
-| OpenWrt | `SNAPSHOT r0-a536ab1502` |
-| LuCI | `0.260815.07377` |
-| Linux kernel | `6.18.41` |
-| Source commit used for this build | `68a8a32e9e753608b4f6539fd54ac3ff4b1c2349` |
+| OpenWrt | `SNAPSHOT r0-4387a153c4` |
+| LuCI | `0.260709.71895` |
+| Linux kernel | `6.18.44` |
+| Source commit used for this build | `ba5ad01a16679ed00a517c2c4da8490eab2c834a` |
 
 ### Firmware image
 
-- File: [`firmware/LN6001_OpenWrt_68a8a32_LAB.img`](firmware/LN6001_OpenWrt_68a8a32_LAB.img)
-- Size: `44,185,056` bytes
-- SHA-256: `5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76`
+- File: [`firmware/FW_LN6001_v25.12.26090921_release.img`](firmware/FW_LN6001_v25.12.26090921_release.img)
+- Size: `47,529,952` bytes
+- SHA-256: `0d4074e2e07b4b22db920f7ede1e36c0abbc698ac7c0ab9c086fbfb1f27e6ffd`
 
 Verify the downloaded image before installing it:
 
 ```text
-5337394ed4ff44311c907fcc091cc65de62c723c3d7354ce86615e07cf004b76  LN6001_OpenWrt_68a8a32_LAB.img
+0d4074e2e07b4b22db920f7ede1e36c0abbc698ac7c0ab9c086fbfb1f27e6ffd  FW_LN6001_v25.12.26090921_release.img
 ```
 
 The image uses the Linksys-compatible upgrade wrapper. Its write payload is
@@ -171,8 +173,9 @@ environment, or `flash.scr` payload.
 
 1. Confirm that the router is an **LN6001 / MBE70WRT**. Do not install this
    image on another Velop model merely because its enclosure looks similar.
-2. Boot the official Linksys stock firmware. Stock firmware version 1.2 was
-   used for the tested upgrade path.
+2. Boot the official Linksys stock firmware. Stock version 1.2 is the intended
+   upgrade source, but this build has not yet been flashed or rollback-tested
+   on a CPE.
 3. Confirm that the other firmware slot still contains a working stock image.
 4. Connect a computer to the router by Ethernet and disconnect unnecessary
    upstream network cables during the upgrade.
@@ -186,7 +189,7 @@ environment, or `flash.scr` payload.
 
 1. Sign in to the official Linksys stock web interface.
 2. Open its manual firmware-update page.
-3. Select `LN6001_OpenWrt_68a8a32_LAB.img`.
+3. Select `FW_LN6001_v25.12.26090921_release.img`.
 4. Disable **Keep settings**, **Retain configuration**, or the equivalent
    option.
 5. Start the update and leave the router powered on. Uploading, writing, and
@@ -202,9 +205,11 @@ code, channel, channel width, and transmit-power settings before enabling them
 under **Network → Wireless**.
 
 > [!WARNING]
-> Use this `.img` with the tested stock web-upgrade path. Do not use raw `mtd`
-> writes, partitioning tools, or forced `sysupgrade` options. Those operations
-> can bypass the dual-slot protections and may make recovery impossible.
+> Use this `.img` only with the stock web-upgrade path described here. It has
+> passed offline image validation, but CPE flashing and rollback remain
+> untested. Do not use raw `mtd` writes, partitioning tools, or forced
+> `sysupgrade` options; they can bypass dual-slot protections and make recovery
+> impossible.
 
 ### Dual firmware slots
 
@@ -237,7 +242,7 @@ slot before conducting another experiment.
 ### SNAPSHOT limitations
 
 - OpenWrt SNAPSHOT package repositories move continuously. A later package
-  index may no longer contain kernel modules matching Linux `6.18.41`.
+  index may no longer contain kernel modules matching Linux `6.18.44`.
 - This image includes lab-oriented packages and fork-only changes. It is not
   the clean, minimal image being prepared for possible upstream OpenWrt
   support.
