@@ -1,11 +1,10 @@
-# Release 260927
+# Release 261027
 
-Community OpenWrt release **25.12.26092713** for the Linksys Velop Pro 7
+Community OpenWrt release **25.12.26102722** for the Linksys Velop WRT Pro 7
 (**LN6001 / MBE70WRT**).
 
-Read the [main README](../README.md) for installation instructions and the
-current verification status. Check the download against [SHA256SUMS](SHA256SUMS)
-before installation.
+**This is not an official release from Linksys or the OpenWrt project.**
 
-File integrity has been verified. Hardware acceptance for this release remains
-unconfirmed.
+Read the [main README](../README.md) for downloads, release information, and
+installation instructions. Check your download against [SHA256SUMS](SHA256SUMS)
+before installation.

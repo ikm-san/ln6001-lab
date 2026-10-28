@@ -1,37 +1,59 @@
-# Linksys Velop Pro 7 (LN6001/MBE70) Lab
-
-Community OpenWrt firmware for the **Linksys Velop WRT Pro 7 (LN6001 / MBE70WRT)**.
+# Linksys Velop WRT Pro 7 LN6001 Community Firmware
 
 ## 日本語
 
-Linksys Velop WRT Pro 7（LN6001 / MBE70WRT）向けのOpenWrtファームウェアです。
+Linksys Velop WRT Pro 7 (LN6001 / MBE70)  OpenWrt ルーターの最新コミュニティファームウェアです。  
+[Suricata](https://suricata.io/)と[Emerging Threats Open](https://rules.emergingthreats.net/open/)を活用したネットワーク保護機能に対応。IoT機器やホームネットワーク向けに選定した検知ルールで、既知のマルウェア通信やボットネット活動、ネットワーク機器を狙う攻撃を検知します。機能を有効にすると、選定した高確度の検知ルールに基づいて不正な通信を自動遮断。不審な通信や遮断イベントは、ルーターの管理画面で確認できます。また、、[Threat Intelligence Feeds (TIF) DNS Blocklist - mini version](https://github.com/hagezi/dns-blocklists#tifmini)を活用したWEBフィルタリングにてフィッシング詐欺、マルウェア、スパイウェアなどの悪意のあるドメインなどを自動的に遮断します。有料の脅威情報サブスクリプションは不要です。 ※IPS/IDS及びWebフィルタリング機能はインターネット設定実施後に有効化してください。
 
-### リリース 260927
+### 主な機能
+
+- **VPN 接続に対応：** [WireGuard](https://www.wireguard.com/)、[Tailscale](https://github.com/tailscale/tailscale)、IPsec を利用可能。
+- **IPoE 接続に対応。**
+- **地域に合わせた Wi-Fi：** 国・地域別 Wi-Fi パッケージと、工場出荷時のキャリブレーションを使用。
+- **ボタン操作でメッシュ Wi-Fi：** WPS ボタンを使ってメッシュ接続をセットアップ。
+- **IoT 機器の保護：** 不審な通信の検知・防御を支援する IPS/IDS（不正侵入防止・不正侵入検知システム）。
+- **[Adblock](https://github.com/openwrt/packages/blob/master/net/adblock/README.md)に対応。**
+
+使ってみた感想、不具合の報告、改善のアイデアをぜひお寄せください。
+OpenWrt のコミュニティーと、LN6001 の開発・テストに協力してくださる皆さんに感謝します。
+
+
+### リリース情報
 
 | 項目 | 内容 |
 | --- | --- |
-| リリース日 | 2026-09-27 |
-| リリースブランチ | `260927` |
-| バージョン | `25.12.26092713` |
-| 製品 | Linksys Velop Pro 7 |
-| 対応モデル | LN6001 / MBE70WRT |
-| OpenWrt | `SNAPSHOT r0-e248cebd1a` |
-| LuCI | `0.260709.71895` |
-| LuCI base | `0.260927.22557` |
-| Linux カーネル | `6.18.52` |
+| ステータス | 公開済み（非公式コミュニティリリース） |
+| 公開日 | 2026-10-28 |
+| リリースブランチ | `261027` |
+| バージョン | `25.12.26102722` |
+| 対応モデル | Linksys LN6001 / MBE70WRT |
+| OpenWrt | `SNAPSHOT r37657-b5bc4becb4` |
+| Linux カーネル | `6.18.55` |
 
-LuCI による管理画面と Auto-IPoE を含むコミュニティ向けリリースです。
+LuCI のシステム情報画面（OpenWrt と Linux カーネルのバージョン表示）。
 
-### ダウンロードと確認状況
+![LN6001 の LuCI システム情報：OpenWrt SNAPSHOT r37657-b5bc4becb4、Linux 6.18.55](docs/images/ln6001-system-status-26102722.png)
 
-[firmware フォルダー](firmware/) から本リリースをダウンロードしてください。
+### ダウンロード
 
+[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261027/firmware/FW_LN6001_v25.12.26102722_openwrt_release.img)。
+インストール前に [SHA256SUMS](firmware/SHA256SUMS) でダウンロードしたファイルを確認してください。
+
+###  バックアップパーティションに切り替える方法
+
+注意事項：OpenWrtファームウェアからは純正のリテールファームウェアには戻せませんので、２つあるパーティションのうち１つは純正ファームウェアのために残すようにしてください。
+
+LN6001 は、OS起動用のパーティションが２つ用意されています。A/Bの２種類のうち、A側からファームウェアのアップデートを行うと、B側のパーティションを更新します。バックアップパーティションに切り替えるには、ルーターの起動を 3 回中断すると通常は別のファームウェアスロットに切り替わります。
+
+1. 電源スイッチをONにして起動中に約 5 秒後に電源スイッチを切ります。
+2. この操作を合計 3 回行います。
+3. 4 回目は電源を入れたまま数分待つと、バックアップスロットが起動します。
 
 ### インストール
 
-1. ルーターが **LN6001 / MBE70WRT** であり、もう一方のスロットに起動可能な純正
-   ファームウェアが残っていることを確認します。
-2. 必要な設定をバックアップし、PC を Ethernet で接続します。
+
+1. ルーターが **LN6001 / MBE70WRT** であることを確認します。
+2. 設定のバックアップが必要な場合は保存し、ルーターにPC を Ethernet で接続します。
 3. Linksys 純正 Web インターフェースの手動ファームウェア更新画面を開きます。
 4. 本リリースのダウンロードファイルを選択し、**設定を保持する**オプションを
    無効にします。
@@ -43,13 +65,23 @@ LuCI による管理画面と Auto-IPoE を含むコミュニティ向けリリ�
 
 Wi-Fi のパスフレーズも CPE 底面のラベルに記載されています。
 
-###  バックアップパーティションに切り替える方法
+### 関連プロジェクト・フィルターリスト
 
-LN6001 は、起動を 3 回中断すると通常は別のファームウェアスロットを選択します。
+本リリースを支える OSS プロジェクトとフィルターの提供元です。
+各プロジェクトの皆さんに感謝します。
 
-1. 電源スイッチをONにして起動中に約 5 秒後に電源スイッチを切ります。
-2. この操作を合計 3 回行います。
-3. 4 回目は電源を入れたまま数分待つと、バックアップスロットが起動します。
+| プロジェクト・フィルター | 主な役割 |
+| --- | --- |
+| [OpenWrt](https://openwrt.org/) | ファームウェアの基盤 |
+| [LuCI](https://github.com/openwrt/luci) | Web 管理画面 |
+| [Suricata](https://suricata.io/) | IPS/IDS |
+| [Emerging Threats Open](https://rules.emergingthreats.net/open/) | 脅威検知ルール |
+| [OpenWrt adblock](https://github.com/openwrt/packages/blob/master/net/adblock/README.md) | DNS ベースの広告ブロック |
+|  |
+| [HaGeZi TIF mini](https://github.com/hagezi/dns-blocklists#tifmini) | 悪意のあるドメインのブロックリスト |
+| [WireGuard](https://www.wireguard.com/) | VPN |
+| [Tailscale](https://github.com/tailscale/tailscale) | VPN クライアント |
+
 
 ### 補足
 
@@ -64,31 +96,78 @@ LN6001 は、起動を 3 回中断すると通常は別のファームウェア�
 
 ## English
 
-### Release 260927
+**This is a community release. It is not an official release from Linksys or the OpenWrt project.**
+
+This is the latest community firmware for the Linksys Velop WRT Pro 7
+(LN6001 / MBE70) OpenWrt router.
+
+Network protection uses [Suricata](https://suricata.io/) and [Emerging Threats Open](https://rules.emergingthreats.net/open/), with detection rules
+selected for IoT devices and home networks. These rules help detect known malware
+traffic, botnet activity, and attacks targeting network devices. When enabled,
+the feature automatically blocks malicious traffic based on selected
+high-confidence detection rules. You can review suspicious traffic and blocking
+events in the router's administration interface.
+
+Web filtering uses the [Threat Intelligence Feeds (TIF) DNS Blocklist - mini version](https://github.com/hagezi/dns-blocklists#tifmini) to automatically block malicious domains associated with phishing,
+malware, spyware, and other threats. No paid threat intelligence subscription
+is required.
+
+**Enable IPS/IDS and web filtering after completing your Internet connection setup.**
+
+### Highlights
+
+- **VPN ready:** [WireGuard](https://www.wireguard.com/), [Tailscale](https://github.com/tailscale/tailscale), and IPsec support.
+- **IPoE ready.**
+- **Wi-Fi for your region:** Uses Wi-Fi packages for your country or region and factory calibration data.
+- **Mesh Wi-Fi at the push of a button:** Set up mesh connections using the WPS button.
+- **Protection for IoT devices:** IPS/IDS (intrusion prevention and intrusion detection systems) helps detect and block suspicious network traffic.
+- **[Adblock](https://github.com/openwrt/packages/blob/master/net/adblock/README.md) support.**
+
+Feedback, bug reports, and ideas are welcome. Thanks to the OpenWrt community
+and everyone helping develop and test LN6001 support.
+
+### Release information
 
 | Item | Value |
 | --- | --- |
-| Release date | 2026-09-27 |
-| Release branch | `260927` |
-| Version | `25.12.26092713` |
-| Product | Linksys Velop Pro 7 |
-| Supported models | LN6001 / MBE70WRT |
-| OpenWrt | `SNAPSHOT r0-e248cebd1a` |
-| LuCI | `0.260709.71895` |
-| LuCI base | `0.260927.22557` |
-| Linux kernel | `6.18.52` |
+| Status | Published (unofficial community release) |
+| Publication date | 2026-10-28 |
+| Release branch | `261027` |
+| Version | `25.12.26102722` |
+| Supported models | Linksys LN6001 / MBE70WRT |
+| OpenWrt | `SNAPSHOT r37657-b5bc4becb4` |
+| Linux kernel | `6.18.55` |
 
-This community release includes the LuCI administration interface and Auto-IPoE.
+LuCI system status showing the OpenWrt and Linux kernel versions.
 
-### Download and verification status
+![LN6001 LuCI system status: OpenWrt SNAPSHOT r37657-b5bc4becb4, Linux 6.18.55](docs/images/ln6001-system-status-26102722.png)
 
-Download this release from the [firmware directory](firmware/).
+### Download
+
+[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261027/firmware/FW_LN6001_v25.12.26102722_openwrt_release.img).
+Before installation, verify your download against [SHA256SUMS](firmware/SHA256SUMS).
+
+### Switching to the backup partition
+
+**Important:** You cannot reinstall the stock retail firmware from OpenWrt.
+Keep the stock firmware on one of the two partitions.
+
+The LN6001 has two partitions for booting the operating system, A and B.
+Updating the firmware while running from partition A writes the update to
+partition B. To switch to the backup partition, interrupt the router's startup
+three times. This normally causes it to select the other firmware slot.
+
+1. Turn the power switch on, then turn it off after about five seconds while
+   the router is starting up.
+2. Repeat this sequence three times in total.
+3. On the fourth power-on, leave the router powered on for several minutes
+   until it boots from the backup slot.
 
 ### Installation
 
-1. Confirm that the router is an **LN6001 / MBE70WRT** and that the other slot
-   still contains bootable stock firmware.
-2. Back up any settings you need and connect the computer by Ethernet.
+1. Confirm that the router is an **LN6001 / MBE70WRT**.
+2. Back up your settings if needed, then connect your computer to the router
+   using Ethernet.
 3. Open the manual firmware-update page in the Linksys stock web interface.
 4. Select the downloaded release file and disable **Keep settings**.
 5. Start the update and keep the router powered on until it finishes rebooting.
@@ -101,16 +180,21 @@ Download this release from the [firmware directory](firmware/).
 
 The Wi-Fi passphrase is also printed on the CPE's bottom label.
 
-### Switching to the backup partition
+### Projects and filter lists
 
-The LN6001 normally selects the other firmware slot after three interrupted
-boot attempts.
+Thanks to the open-source projects and filter maintainers behind this release.
 
-1. Turn the power switch on, then turn it off after about five seconds while
-   the router is starting up.
-2. Repeat this sequence three times in total.
-3. On the fourth power-on, leave the router powered on for several minutes
-   until it boots from the backup slot.
+| Project or filter | Role |
+| --- | --- |
+| [OpenWrt](https://openwrt.org/) | Firmware platform |
+| [LuCI](https://github.com/openwrt/luci) | Web administration interface |
+| [Suricata](https://suricata.io/) | IPS/IDS |
+| [Emerging Threats Open](https://rules.emergingthreats.net/open/) | Threat detection rules |
+| [OpenWrt adblock](https://github.com/openwrt/packages/blob/master/net/adblock/README.md) | DNS-based ad blocking |
+|  |
+| [HaGeZi TIF mini](https://github.com/hagezi/dns-blocklists#tifmini) | Malicious-domain blocklist |
+| [WireGuard](https://www.wireguard.com/) | VPN |
+| [Tailscale](https://github.com/tailscale/tailscale) | VPN client |
 
 ### Notes
 
