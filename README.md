@@ -23,20 +23,20 @@ OpenWrt のコミュニティーと、LN6001 の開発・テストに協力し�
 | 項目 | 内容 |
 | --- | --- |
 | ステータス | 公開済み（非公式コミュニティリリース） |
-| 公開日 | 2026-11-01 |
-| リリースブランチ | `1031` |
-| バージョン | `25.12.26103122` |
+| 公開日 | 2026-11-03 |
+| リリースブランチ | `1103` |
+| バージョン | `25.12.26110319` |
 | 対応モデル | Linksys LN6001 / MBE70WRT |
-| OpenWrt | `SNAPSHOT r37657-b5bc4becb4` |
-| Linux カーネル | `6.18.56` |
+| OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
+| Linux カーネル | `6.18.60` |
 
-参考：前回リリース `261027` の LuCI システム情報画面です。今回のリリースのバージョンは上記の表をご確認ください。
+LuCI のシステム情報画面（OpenWrt と Linux カーネルのバージョン表示）。
 
-![LN6001 の LuCI システム情報：OpenWrt SNAPSHOT r37657-b5bc4becb4、Linux 6.18.55](docs/images/ln6001-system-status-26102722.png)
+![LN6001 の LuCI システム情報：OpenWrt SNAPSHOT r38011-46e6335fbd、Linux 6.18.60](docs/images/ln6001-system-status-26110319.png)
 
 ### ダウンロード
 
-[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1031/firmware/FW_LN6001_v25.12.26103122_openwrt_release.img)。
+[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1103/firmware/FW_LN6001_v25.12.26110319_openwrt_release.img)。
 インストール前に [SHA256SUMS](firmware/SHA256SUMS) でダウンロードしたファイルを確認してください。
 
 ###  バックアップパーティションに切り替える方法
@@ -131,20 +131,20 @@ and everyone helping develop and test LN6001 support.
 | Item | Value |
 | --- | --- |
 | Status | Published (unofficial community release) |
-| Publication date | 2026-11-01 |
-| Release branch | `1031` |
-| Version | `25.12.26103122` |
+| Publication date | 2026-11-03 |
+| Release branch | `1103` |
+| Version | `25.12.26110319` |
 | Supported models | Linksys LN6001 / MBE70WRT |
-| OpenWrt | `SNAPSHOT r37657-b5bc4becb4` |
-| Linux kernel | `6.18.56` |
+| OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
+| Linux kernel | `6.18.60` |
 
-Reference: LuCI system status from the previous release, `261027`. See the table above for the versions in this release.
+LuCI system status showing the OpenWrt and Linux kernel versions.
 
-![LN6001 LuCI system status: OpenWrt SNAPSHOT r37657-b5bc4becb4, Linux 6.18.55](docs/images/ln6001-system-status-26102722.png)
+![LN6001 LuCI system status: OpenWrt SNAPSHOT r38011-46e6335fbd, Linux 6.18.60](docs/images/ln6001-system-status-26110319.png)
 
 ### Download
 
-[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1031/firmware/FW_LN6001_v25.12.26103122_openwrt_release.img).
+[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1103/firmware/FW_LN6001_v25.12.26110319_openwrt_release.img).
 Before installation, verify your download against [SHA256SUMS](firmware/SHA256SUMS).
 
 ### Switching to the backup partition
