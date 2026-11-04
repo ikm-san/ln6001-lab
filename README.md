@@ -23,20 +23,20 @@ OpenWrt のコミュニティーと、LN6001 の開発・テストに協力し�
 | 項目 | 内容 |
 | --- | --- |
 | ステータス | 公開済み（非公式コミュニティリリース） |
-| 公開日 | 2026-11-03 |
-| リリースブランチ | `1103` |
-| バージョン | `25.12.26110319` |
+| 公開日 | 2026-11-04 |
+| リリースブランチ | `1104` |
+| バージョン | `25.12.26110419` |
 | 対応モデル | Linksys LN6001 / MBE70WRT |
 | OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
 | Linux カーネル | `6.18.60` |
 
-LuCI のシステム情報画面（OpenWrt と Linux カーネルのバージョン表示）。
+参考：リリース `1103` の LuCI システム情報画面です。今回のリリース情報は上記の表をご確認ください。
 
 ![LN6001 の LuCI システム情報：OpenWrt SNAPSHOT r38011-46e6335fbd、Linux 6.18.60](docs/images/ln6001-system-status-26110319.png)
 
 ### ダウンロード
 
-[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1103/firmware/FW_LN6001_v25.12.26110319_openwrt_release.img)。
+[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1104/firmware/FW_LN6001_v25.12.26110419_openwrt_release.img)。
 インストール前に [SHA256SUMS](firmware/SHA256SUMS) でダウンロードしたファイルを確認してください。
 
 ###  バックアップパーティションに切り替える方法
@@ -131,20 +131,20 @@ and everyone helping develop and test LN6001 support.
 | Item | Value |
 | --- | --- |
 | Status | Published (unofficial community release) |
-| Publication date | 2026-11-03 |
-| Release branch | `1103` |
-| Version | `25.12.26110319` |
+| Publication date | 2026-11-04 |
+| Release branch | `1104` |
+| Version | `25.12.26110419` |
 | Supported models | Linksys LN6001 / MBE70WRT |
 | OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
 | Linux kernel | `6.18.60` |
 
-LuCI system status showing the OpenWrt and Linux kernel versions.
+Reference: LuCI system status from release `1103`. See the table above for the version details of this release.
 
 ![LN6001 LuCI system status: OpenWrt SNAPSHOT r38011-46e6335fbd, Linux 6.18.60](docs/images/ln6001-system-status-26110319.png)
 
 ### Download
 
-[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1103/firmware/FW_LN6001_v25.12.26110319_openwrt_release.img).
+[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1104/firmware/FW_LN6001_v25.12.26110419_openwrt_release.img).
 Before installation, verify your download against [SHA256SUMS](firmware/SHA256SUMS).
 
 ### Switching to the backup partition

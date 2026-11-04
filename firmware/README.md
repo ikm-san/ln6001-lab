@@ -1,6 +1,6 @@
-# Release 1103
+# Release 1104
 
-Community OpenWrt release **25.12.26110319** for the Linksys Velop WRT Pro 7
+Community OpenWrt release **25.12.26110419** for the Linksys Velop WRT Pro 7
 (**LN6001 / MBE70WRT**).
 
 **This is not an official release from Linksys or the OpenWrt project.**
