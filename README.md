@@ -23,9 +23,9 @@ OpenWrt のコミュニティーと、LN6001 の開発・テストに協力し�
 | 項目 | 内容 |
 | --- | --- |
 | ステータス | 公開済み（非公式コミュニティリリース） |
-| 公開日 | 2026-11-04 |
-| リリースブランチ | `1104` |
-| バージョン | `25.12.26110419` |
+| 公開日 | 2026-11-06 |
+| リリースブランチ | `261106` |
+| バージョン | `25.12.26110613` |
 | 対応モデル | Linksys LN6001 / MBE70WRT |
 | OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
 | Linux カーネル | `6.18.60` |
@@ -36,7 +36,7 @@ OpenWrt のコミュニティーと、LN6001 の開発・テストに協力し�
 
 ### ダウンロード
 
-[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1104/firmware/FW_LN6001_v25.12.26110419_openwrt_release.img)。
+[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261106/firmware/FW_LN6001_v25.12.26110613_community_release.img)。
 インストール前に [SHA256SUMS](firmware/SHA256SUMS) でダウンロードしたファイルを確認してください。
 
 ###  バックアップパーティションに切り替える方法
@@ -131,9 +131,9 @@ and everyone helping develop and test LN6001 support.
 | Item | Value |
 | --- | --- |
 | Status | Published (unofficial community release) |
-| Publication date | 2026-11-04 |
-| Release branch | `1104` |
-| Version | `25.12.26110419` |
+| Publication date | 2026-11-06 |
+| Release branch | `261106` |
+| Version | `25.12.26110613` |
 | Supported models | Linksys LN6001 / MBE70WRT |
 | OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
 | Linux kernel | `6.18.60` |
@@ -144,7 +144,7 @@ Reference: LuCI system status from release `1103`. See the table above for the v
 
 ### Download
 
-[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/1104/firmware/FW_LN6001_v25.12.26110419_openwrt_release.img).
+[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261106/firmware/FW_LN6001_v25.12.26110613_community_release.img).
 Before installation, verify your download against [SHA256SUMS](firmware/SHA256SUMS).
 
 ### Switching to the backup partition
