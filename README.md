@@ -23,20 +23,20 @@ OpenWrt のコミュニティーと、LN6001 の開発・テストに協力し�
 | 項目 | 内容 |
 | --- | --- |
 | ステータス | 公開済み（非公式コミュニティリリース） |
-| 公開日 | 2026-11-06 |
-| リリースブランチ | `261106` |
-| バージョン | `25.12.26110613` |
+| 公開日 | 2026-11-15 |
+| リリースブランチ | `261115` |
+| バージョン | `26.11.151811` |
 | 対応モデル | Linksys LN6001 / MBE70WRT |
 | OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
 | Linux カーネル | `6.18.60` |
 
-参考：リリース `1103` の LuCI システム情報画面です。今回のリリース情報は上記の表をご確認ください。
+LuCI のシステム情報画面（OpenWrt と Linux カーネルのバージョン表示）。
 
-![LN6001 の LuCI システム情報：OpenWrt SNAPSHOT r38011-46e6335fbd、Linux 6.18.60](docs/images/ln6001-system-status-26110319.png)
+![LN6001 の LuCI システム情報：OpenWrt SNAPSHOT r38011-46e6335fbd、Linux 6.18.60](docs/images/ln6001-system-status-2611151811.png)
 
 ### ダウンロード
 
-[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261106/firmware/FW_LN6001_v25.12.26110613_community_release.img)。
+[ファームウェアをダウンロード](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261115/firmware/FW_LN6001_v26.11.151811_community_release.img)。
 インストール前に [SHA256SUMS](firmware/SHA256SUMS) でダウンロードしたファイルを確認してください。
 
 ###  バックアップパーティションに切り替える方法
@@ -131,20 +131,20 @@ and everyone helping develop and test LN6001 support.
 | Item | Value |
 | --- | --- |
 | Status | Published (unofficial community release) |
-| Publication date | 2026-11-06 |
-| Release branch | `261106` |
-| Version | `25.12.26110613` |
+| Publication date | 2026-11-15 |
+| Release branch | `261115` |
+| Version | `26.11.151811` |
 | Supported models | Linksys LN6001 / MBE70WRT |
 | OpenWrt | `SNAPSHOT r38011-46e6335fbd` |
 | Linux kernel | `6.18.60` |
 
-Reference: LuCI system status from release `1103`. See the table above for the version details of this release.
+LuCI system status showing the OpenWrt and Linux kernel versions.
 
-![LN6001 LuCI system status: OpenWrt SNAPSHOT r38011-46e6335fbd, Linux 6.18.60](docs/images/ln6001-system-status-26110319.png)
+![LN6001 LuCI system status: OpenWrt SNAPSHOT r38011-46e6335fbd, Linux 6.18.60](docs/images/ln6001-system-status-2611151811.png)
 
 ### Download
 
-[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261106/firmware/FW_LN6001_v25.12.26110613_community_release.img).
+[Download the firmware](https://raw.githubusercontent.com/ikm-san/ln6001-lab/refs/heads/261115/firmware/FW_LN6001_v26.11.151811_community_release.img).
 Before installation, verify your download against [SHA256SUMS](firmware/SHA256SUMS).
 
 ### Switching to the backup partition
